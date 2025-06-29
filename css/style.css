@@ -1,0 +1,185 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+html{
+  font-size: 62.5%;
+}
+.progress-container {
+  width: 100%;
+  max-width: 40rem;
+  /* max-width: 400px; */
+  background-color: #ccc;
+  border-radius: 10px;
+  height: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-and-time{
+  position: relative;
+  width: 100%;
+  max-width: 46rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress {
+  background-color: tomato;
+  border-radius: inherit;
+  height: inherit;
+  width: 30%;
+}
+
+.cover {
+  border-radius: 50%;
+  animation: cover 10s linear infinite;
+  animation-play-state: paused;
+}
+
+.container.play .cover {
+  animation-play-state: running;
+}
+
+@keyframes cover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.extra-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.extra-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.volume-slider {
+  transform: rotate(-90deg);
+  width: 15rem;
+  /* margin-right: 1px; */
+}
+.vol{
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-left: 570px;
+  position: absolute;
+}
+
+button {
+  background-color: #f4f4f4;
+  border: none;
+  border-radius: 12px;
+  padding: 0.625rem 0.875rem;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  /* opacity: 0.9;  */
+}
+
+button:hover {
+  background-color: #0072ff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+button i {
+  font-size: 16px;
+}
+#download{
+  position: absolute;
+  left: 50rem;
+}
+#music-title{
+  font-size: 1.6rem;
+}
+img{
+  max-width: 20rem;
+}
+@media (max-width: 465px) {
+  button{
+    padding: 0.6rem;
+  }
+  #music-title{
+    font-size: 1.2rem;
+  }
+  .extra-controls{
+    gap:0;
+  }
+  .extra-controls button{
+    padding: 0.25rem 0.35rem;
+  }
+  .progress-container{
+    max-width: 29rem;
+  }
+  img{
+    max-width: 15rem;
+  }
+  .volume-slider{
+    width: 9rem;
+  }
+  .vol{
+    margin-right: 15rem;
+    margin-bottom: 10rem;
+    gap: 4rem;
+  }
+  #download{
+    left: 36.5rem;
+    position: absolute;
+  }
+  .progress-and-time{
+    max-width: 35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-video {
+    object-position: center;
+  }
+}
+
+@media (max-width: 465px) {
+  .header-video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
